@@ -1,0 +1,14 @@
+pip install langchain langchain-community langchain-huggingface
+pip install chromadb
+pip install huggingface_hub
+pip install langchain-huggingface
+pip install pypdf
+pip install python-dotenv
+pip install sentence-transformers
+pip install fastapi uvicorn[standard]
+pip install pydantic
+pip install langchain-text-splitters
+pip install langchain-core
+pip install langchain-chroma
+pip install langchain-groq
+pip install python-telegram-bot
