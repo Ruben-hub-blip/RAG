@@ -44,7 +44,7 @@ async def finalizar_reporte(update: Update, context: ContextTypes.DEFAULT_TYPE):
     especie = context.user_data.get('especie', 'Desconocido')
     ubicacion = context.user_data.get('ubicacion', 'Desconocida')
     
-    resumen = f"✅ Reporte Recibido:\nAnimal: {especie}\nUbicación: {ubicacion}\n\nGracias por ayudar a proteger nuestra fauna."
+    resumen = f" Reporte Recibido:\nAnimal: {especie}\nUbicación: {ubicacion}\n\nGracias por ayudar a proteger nuestra fauna."
     await update.message.reply_text(resumen)
     return ConversationHandler.END
 
@@ -91,12 +91,12 @@ if __name__ == '__main__':
         fallbacks=[MessageHandler(filters.Regex(r'(?i)^cancelar$'), cancelar)],
     )
 
-    # ORDEN IMPORTANTE:
+
     # 1. El conversador tiene prioridad (para detectar "reportar")
     app.add_handler(conv_handler)
     
     # 2. El manejador de preguntas RAG captura todo lo demás
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_questions))
 
-    print("🤖 Bot de Telegram en marcha (sin comandos /)...")
+    print(" Bot de Telegram en marcha (sin comandos /)...")
     app.run_polling()
